@@ -23,14 +23,16 @@ def remove_vowels(text):
 # Exercise 3
 def get_initials(text):
     text1 = text.split()
-    ans=text1[0][0].upper()+'.'+text1[1][0].upper()+'.'
+    ans=""
+    for i in range(len(text1)):
+        ans=ans+text1[i][0].upper()+'.'
     return ans
 
 # Exercise 4
 def extract_year(text):
     text1= text.split()
     for i in range(len(text1)):
-        if text1[i].isdigit():
+        if (text1[i].isdigit() and (int(text1[i])>=0 and int(text1[i])<=2026)):
             return text1[i]
     return False
 
